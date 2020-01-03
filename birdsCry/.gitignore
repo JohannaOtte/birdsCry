@@ -1,0 +1,30 @@
+# =============== #
+# Unity generated #
+# =============== #
+[Tt]emp/
+[Ll]ogs/
+[Ll]ibrary/
+[Oo]bj/
+[Mm]emoryCaptures/
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+.vs/
+/*.userprefs
+/*.csproj
+/*.pidb
+*.pidb.meta
+/*.suo
+/*.user
+/*.unityproj
+/*.booproj
+.consulo/
+/*.tmp
+/*.svd
+
+
+# ============ #
+# OS generated #
+# ============ #
+
