@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 1169059271756487267}
   - component: {fileID: 1169059271756487271}
   - component: {fileID: 1169059271756487266}
+  - component: {fileID: 538849308}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -177,6 +178,7 @@ MonoBehaviour:
   m_RawInput: 1
   m_Speed: 12
   m_Gravity: -19.62
+  m_Body: {fileID: 1169059271039604550}
   m_GroundCheck: {fileID: 1169059270982892678}
   m_GroundDistance: 0.4
   m_GroundMask:
@@ -184,6 +186,20 @@ MonoBehaviour:
     m_Bits: 256
   m_Velocity: {x: 0, y: 0, z: 0}
   m_IsGrounded: 0
+--- !u!114 &538849308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169059271756487320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb97dd2a066dca149b82a845bdf5048c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PosObject: {fileID: 1169059271756487320}
+  m_TimeSinceLastPos: 0.5
 --- !u!1 &1169059272155575145
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,3 +300,4 @@ MonoBehaviour:
   m_PlayerTransform: {fileID: 1169059271756487267}
   m_MaximumSelectionDistance: 3
   m_GameManager: {fileID: 0}
+  m_CharacterMovement: {fileID: 1169059271756487266}

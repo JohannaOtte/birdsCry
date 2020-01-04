@@ -12,16 +12,20 @@ public class MouseLook : MonoBehaviour
 
     [SerializeField] private float m_MaximumSelectionDistance = 3f;
     [SerializeField] private GameManager m_GameManager = null;
+    [SerializeField] private CharacterMovement m_CharacterMovement;
 
 
     private float m_XRotation = 0f;
 
     private GameObject m_CurrentSelection = null;
 
+    private GameObject m_LastBirdFollowObject;
+
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        m_LastBirdFollowObject = m_CharacterMovement.gameObject;
     }
 
     // Update is called once per frame
@@ -31,10 +35,6 @@ public class MouseLook : MonoBehaviour
         Raycast();
         CheckClick();
     }
-
-
-
-    
 
     private void LookAround()
     {
@@ -103,7 +103,23 @@ public class MouseLook : MonoBehaviour
         if (m_CurrentSelection != null && m_CurrentSelection.tag == "MachineTrigger")
         {
             bool getsDeactivated = m_CurrentSelection.GetComponent<MachineTriggerBehaviour>().OnClicked();
-            m_GameManager.MachineClicked();
+            if (getsDeactivated)
+            {
+                m_GameManager.MachineClicked();
+            }
+
+        }
+
+        else if (m_CurrentSelection != null && m_CurrentSelection.tag == "Bird")
+        {
+            bool isCatched = m_CurrentSelection.GetComponent<BirdBehaviour>().OnClicked(m_LastBirdFollowObject);
+
+            if (isCatched)
+            {
+                m_GameManager.BirdCatched();
+                m_LastBirdFollowObject = m_CurrentSelection;
+            }
+            
         }
 
     }

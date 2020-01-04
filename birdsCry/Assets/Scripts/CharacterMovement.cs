@@ -9,6 +9,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float m_Speed = 12f;
     [SerializeField] private float m_Gravity = -9.81f;
 
+    [SerializeField] private GameObject m_Body;
 
     [SerializeField] private Transform m_GroundCheck;
     [SerializeField] private float m_GroundDistance = 0.4f;
@@ -18,6 +19,8 @@ public class CharacterMovement : MonoBehaviour
 
     public Vector3 m_Velocity;
     public bool m_IsGrounded = false;
+
+
 
     private void Start()
     {
@@ -29,7 +32,7 @@ public class CharacterMovement : MonoBehaviour
         CheckIfGrounded();
         Move();
         StickToGround();
-       
+
     }
 
     private void CheckIfGrounded()
@@ -42,10 +45,12 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    
+
 
     private void Move()
     {
+
+
         float x = -1;
         float z = -1;
 
@@ -72,7 +77,7 @@ public class CharacterMovement : MonoBehaviour
         {
             m_Velocity.y += m_Gravity + Time.deltaTime;
         }
-        
+
         m_Controller.Move(m_Velocity * Time.deltaTime);
     }
 }

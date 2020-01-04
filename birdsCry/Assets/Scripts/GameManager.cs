@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UIManager m_UIManager;
     [SerializeField] private int m_NumberOfActiveMachines = 9;
     [SerializeField] private int m_NumberOfBadMachines = 3;
+    [SerializeField] private int m_NumberOfBirds = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,16 @@ public class GameManager : MonoBehaviour
         }
 
         m_NumberOfActiveMachines--;
+    }
+
+    public void BirdCatched()
+    {
+        GlobalVariables.SAVED_BIRDS++;
+        m_UIManager.SetBirds(GlobalVariables.SAVED_BIRDS);
+        if(GlobalVariables.SAVED_BIRDS >= m_NumberOfBirds)
+        {
+            EndGame(GlobalVariables.GameState.WON);
+        }
     }
 
     private void EndGame(GlobalVariables.GameState state)
