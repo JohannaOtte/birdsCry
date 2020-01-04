@@ -6,6 +6,7 @@ public class LookAtSomething : MonoBehaviour
 {
 
     public Transform target;
+    public bool m_IsInitialized = false;
 
     // Start is called before the first frame update
     void Start()

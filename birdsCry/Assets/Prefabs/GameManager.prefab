@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UIManager: {fileID: 0}
+  m_Player: {fileID: 0}
   m_Machines:
   - {fileID: 0}
   - {fileID: 0}
@@ -80,6 +81,20 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8430edf7677114e4a9297903a40f9bd0, type: 3}
   - {fileID: 8300000, guid: 5d87d06e2a1e38e4ebf21cf814221f83, type: 3}
   - {fileID: 8300000, guid: 6967b0cc5c6cf2243a110b55cbe5b509, type: 3}
+  m_BirdSpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_BirdSprites:
+  - {fileID: 21300000, guid: 0c2e3ec282d1fac4cb42e3508b958c99, type: 3}
+  - {fileID: 21300000, guid: b7af8f3628f782e4aa50a84efd4149ce, type: 3}
+  - {fileID: 21300000, guid: 847f9711c116acd41b1aa01261ef38c4, type: 3}
+  - {fileID: 21300000, guid: 8c089f03eaa4ccf44a65563b10ef1b27, type: 3}
+  - {fileID: 21300000, guid: 86208ddc4f773974196906beb7151c5b, type: 3}
+  - {fileID: 21300000, guid: 741200fe4a0113442bccc146b4915a0c, type: 3}
   m_MaxAdmonitions: 3
   m_NumberOfBirds: 3
   m_TimeLeft: 240
+  m_BirdPrefab: {fileID: 2553484379794024249, guid: bc238eb8f9b61b542babf236e5d819f7,
+    type: 3}

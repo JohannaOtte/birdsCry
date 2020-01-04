@@ -3,12 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BirdBehaviour : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI m_SaveText;
 
     [SerializeField] private Canvas m_OwnCanvas;
+
+    [SerializeField] private Image m_Image;
+    [SerializeField] private LookAtSomething m_LookAtSomething;
 
     private bool m_IsCatched = false;
 
@@ -20,6 +24,15 @@ public class BirdBehaviour : MonoBehaviour
         FollowPlayerWhenCatched();
     }
 
+    public void Initialize(Sprite sprite, Transform lookAtTarget)
+    {
+        Debug.Log(lookAtTarget);
+        if (sprite != null)
+        {
+            m_Image.sprite = sprite;
+        }
+        m_LookAtSomething.target = lookAtTarget;
+    }
 
 
     private void OnSelected()

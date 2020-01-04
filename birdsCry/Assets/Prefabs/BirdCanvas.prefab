@@ -319,7 +319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0c2e3ec282d1fac4cb42e3508b958c99, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 847f9711c116acd41b1aa01261ef38c4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -409,6 +409,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SaveText: {fileID: 1923153922}
   m_OwnCanvas: {fileID: 2553484379794024250}
+  m_Image: {fileID: 2553484380791183797}
+  m_LookAtSomething: {fileID: 2553484380791183799}
 --- !u!114 &8895536788523115412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,7 +424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PosObject: {fileID: 2553484379794024249}
-  m_TimeSinceLastPos: 0.5
+  m_TimeSinceLastPos: 1
 --- !u!82 &8317847532447371152
 AudioSource:
   m_ObjectHideFlags: 0
