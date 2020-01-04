@@ -70,6 +70,16 @@ MonoBehaviour:
   - "Hydraulische Wurstpressmaschine: F\xFCllt die Fleischmasse \xFCber die daf\xFCr
     vorgesehene Darmhaltevorrichtung in den Naturdarm"
   m_MachineKinds: 010000000200000001000000000000000000000001000000000000000100000000000000
+  m_MachineSounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 74b314b0a60eba34aac9304d67dd3528, type: 3}
+  - {fileID: 8300000, guid: 5d87d06e2a1e38e4ebf21cf814221f83, type: 3}
+  - {fileID: 8300000, guid: 4d100493e153af54d9ac72f708411534, type: 3}
+  - {fileID: 8300000, guid: 8430edf7677114e4a9297903a40f9bd0, type: 3}
+  - {fileID: 8300000, guid: 5d87d06e2a1e38e4ebf21cf814221f83, type: 3}
+  - {fileID: 8300000, guid: 6967b0cc5c6cf2243a110b55cbe5b509, type: 3}
   m_MaxAdmonitions: 3
   m_NumberOfBirds: 3
   m_TimeLeft: 240

@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<MachineTriggerBehaviour> m_Machines;
     [SerializeField] private List<String> m_MachineDescriptions;
     [SerializeField] private List<MachineTriggerBehaviour.MachineKind> m_MachineKinds;
-    [SerializeField] private List<AudioSource> m_MachineSounds;
+    [SerializeField] private List<AudioClip> m_MachineSounds;
 
     [SerializeField] private int m_MaxAdmonitions = 3;
     [SerializeField] private int m_NumberOfBirds = 3;
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < m_Machines.Count; i++)
         {
-            m_Machines[i].Initialize(m_MachineDescriptions[i], m_MachineKinds[i]);
+            m_Machines[i].Initialize(m_MachineDescriptions[i], m_MachineKinds[i], m_MachineSounds[i]);
         }
     }
 
