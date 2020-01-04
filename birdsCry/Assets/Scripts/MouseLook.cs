@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-   [SerializeField] private float m_MouseSensitivity = 100f;
+    [SerializeField] private float m_MouseSensitivity = 100f;
 
 
-   [SerializeField] private Transform m_PlayerTransform = null;
+    [SerializeField] private Transform m_PlayerTransform = null;
 
     [SerializeField] private float m_MaximumSelectionDistance = 3f;
+    [SerializeField] private GameManager m_GameManager = null;
+
 
     private float m_XRotation = 0f;
 
@@ -27,8 +29,12 @@ public class MouseLook : MonoBehaviour
     {
         LookAround();
         Raycast();
+        CheckClick();
     }
 
+
+
+    
 
     private void LookAround()
     {
@@ -54,21 +60,21 @@ public class MouseLook : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
 
-            if(hit.distance <= m_MaximumSelectionDistance)
+            if (hit.distance <= m_MaximumSelectionDistance)
             {
                 selection = hit.collider.transform.gameObject;
             }
 
             Debug.Log(selection);
 
-            if(selection == m_CurrentSelection)
+            if (selection == m_CurrentSelection)
             {
                 return;
             }
 
 
 
-            if(selection != null && (selection.tag == "MachineTrigger" || selection.tag == "Bird"))
+            if (selection != null && (selection.tag == "MachineTrigger" || selection.tag == "Bird"))
             {
                 selection.SendMessageUpwards("OnSelected");
             }
@@ -82,8 +88,23 @@ public class MouseLook : MonoBehaviour
 
         }
 
-        
 
-       
+
+
+    }
+
+    private void CheckClick()
+    {
+        if (!Input.GetMouseButtonDown(0))
+        {
+            return;
+        }
+
+        if (m_CurrentSelection != null && m_CurrentSelection.tag == "MachineTrigger")
+        {
+            bool getsDeactivated = m_CurrentSelection.GetComponent<MachineTriggerBehaviour>().OnClicked();
+            m_GameManager.MachineClicked();
+        }
+
     }
 }
