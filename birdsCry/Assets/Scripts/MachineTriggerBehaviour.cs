@@ -5,12 +5,22 @@ using UnityEngine;
 
 public class MachineTriggerBehaviour : MonoBehaviour
 {
-    [SerializeField] private string m_MachineName = "DefaultMachine";
+
 
     [SerializeField] private Color m_SelectedColor;
     [SerializeField] private Color m_DeactivatedColor;
     [SerializeField] private TextMeshProUGUI m_NameText;
-    
+
+    public enum MachineKind
+    {
+        GOOD,
+        BAD,
+        DEVASTATING,
+        DEFAULT
+    }
+
+    [HideInInspector] public string m_MachineName = "DefaultMachine";
+    [HideInInspector] public MachineKind m_MachineKind;
 
     private Color m_NormalColor;
     private bool m_IsDeactivated = false;
@@ -19,6 +29,12 @@ public class MachineTriggerBehaviour : MonoBehaviour
     void Start()
     {
         m_NormalColor = GetComponent<MeshRenderer>().material.color;
+    }
+
+    public void Initialize(string machineName, MachineKind machineKind)
+    {
+        m_MachineName = machineName;
+        m_MachineKind = machineKind;
     }
 
     // Update is called once per frame
@@ -58,8 +74,7 @@ public class MachineTriggerBehaviour : MonoBehaviour
         }
 
         return false;
-        
-        
-        
+
     }
+
 }
