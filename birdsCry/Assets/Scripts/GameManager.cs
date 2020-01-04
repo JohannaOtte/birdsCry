@@ -1,13 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private UIManager m_UIManager;
     [SerializeField] private int m_NumberOfActiveMachines = 9;
     [SerializeField] private int m_NumberOfBadMachines = 3;
-    private int m_NumberOfAdmonitions = 0;
+    [SerializeField] private int m_NumberOfBirds = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,13 +24,34 @@ public class GameManager : MonoBehaviour
 
     public void MachineClicked()
     {
-        int machineNumber = Random.Range(0,m_NumberOfActiveMachines);
-        if (machineNumber < m_NumberOfBadMachines-m_NumberOfAdmonitions)
+        int machineNumber = UnityEngine.Random.Range(0,m_NumberOfActiveMachines);
+        if (machineNumber < m_NumberOfBadMachines- GlobalVariables.ADMONITIONS)
         {
-            m_NumberOfAdmonitions++;
-            m_UIManager.SetAdmonitions(m_NumberOfAdmonitions);
+            GlobalVariables.ADMONITIONS++;
+            m_UIManager.SetAdmonitions(GlobalVariables.ADMONITIONS);
+
+            if(GlobalVariables.ADMONITIONS >= m_NumberOfBadMachines)
+            {
+                EndGame(GlobalVariables.GameState.LOST);
+            }
         }
 
         m_NumberOfActiveMachines--;
+    }
+
+    public void BirdCatched()
+    {
+        GlobalVariables.SAVED_BIRDS++;
+        m_UIManager.SetBirds(GlobalVariables.SAVED_BIRDS);
+        if(GlobalVariables.SAVED_BIRDS >= m_NumberOfBirds)
+        {
+            EndGame(GlobalVariables.GameState.WON);
+        }
+    }
+
+    private void EndGame(GlobalVariables.GameState state)
+    {
+        GlobalVariables.GAMESTATE = state;
+        SceneManager.LoadScene("EndScene");
     }
 }

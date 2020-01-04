@@ -6,6 +6,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI m_AdmonitionsText;
+    [SerializeField] private TextMeshProUGUI m_BirdsText;
 
     // Start is called before the first frame update
     void Start()
@@ -22,5 +23,10 @@ public class UIManager : MonoBehaviour
     public void SetAdmonitions(int count)
     {
         m_AdmonitionsText.text = "Ermahnungen: " + count;
+    }
+
+    public void SetBirds(int count)
+    {
+        m_BirdsText.text = "Vögel: " + count;
     }
 }
