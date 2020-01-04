@@ -9,6 +9,9 @@ public class MouseLook : MonoBehaviour
 
 
    [SerializeField] private Transform m_PlayerTransform = null;
+
+    [SerializeField] private float m_MaximumSelectionDistance = 3f;
+
     private float m_XRotation = 0f;
 
     private GameObject m_CurrentSelection = null;
@@ -50,8 +53,14 @@ public class MouseLook : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            selection = hit.collider.transform.gameObject;
+
+            if(hit.distance <= m_MaximumSelectionDistance)
+            {
+                selection = hit.collider.transform.gameObject;
+            }
+
             Debug.Log(selection);
+
             if(selection == m_CurrentSelection)
             {
                 return;
@@ -59,7 +68,7 @@ public class MouseLook : MonoBehaviour
 
 
 
-            if(selection != null && selection.tag == "MachineTrigger" || selection.tag == "Bird")
+            if(selection != null && (selection.tag == "MachineTrigger" || selection.tag == "Bird"))
             {
                 selection.SendMessageUpwards("OnSelected");
             }
