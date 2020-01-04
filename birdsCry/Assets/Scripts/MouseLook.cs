@@ -102,10 +102,11 @@ public class MouseLook : MonoBehaviour
 
         if (m_CurrentSelection != null && m_CurrentSelection.tag == "MachineTrigger")
         {
-            bool getsDeactivated = m_CurrentSelection.GetComponent<MachineTriggerBehaviour>().OnClicked();
+            MachineTriggerBehaviour machineTriggerBehaviour = m_CurrentSelection.GetComponent<MachineTriggerBehaviour>();
+            bool getsDeactivated = machineTriggerBehaviour.OnClicked();
             if (getsDeactivated)
             {
-                m_GameManager.MachineClicked();
+                m_GameManager.MachineClicked(machineTriggerBehaviour.m_MachineKind);
             }
 
         }
