@@ -31,6 +31,7 @@ public class BirdBehaviour : MonoBehaviour
         {
             m_Image.sprite = sprite;
         }
+        m_LookAtSomething.m_IsInitialized = true;
         m_LookAtSomething.target = lookAtTarget;
     }
 
