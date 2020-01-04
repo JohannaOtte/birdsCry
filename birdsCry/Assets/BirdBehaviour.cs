@@ -14,13 +14,6 @@ public class BirdBehaviour : MonoBehaviour
 
     private GameObject m_FollowObject;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -56,6 +49,7 @@ public class BirdBehaviour : MonoBehaviour
         m_FollowObject = followObject;
         m_IsCatched = true;
         m_SaveText.text = "";
+        GetComponent<AudioSource>().Stop();
         return true;
     }
 
