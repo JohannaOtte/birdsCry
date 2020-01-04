@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1097809167075513912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1097809167075513918}
+  - component: {fileID: 1097809167075513919}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1097809167075513918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097809167075513912}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.6699219, y: 3.3095703, z: -4.151367}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1097809167075513919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097809167075513912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d7dfd71d0642c4448c02d6ad9a97bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIManager: {fileID: 0}
+  m_Machines:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_MachineDescriptions:
+  - 'Router: Verbindet die Fabrik mit dem Sicherheitssystem'
+  - 'Hauptstromaggregat: Versorgt die gesamte Fabrik mit Strom'
+  - "L\xFCftungssystem: Versorgt die Fabrik mit frischer Luft und filtert abgestandene
+    Luft und Schadstoffe heraus"
+  - "Flie\xDFband: Transportiert fertige Gefl\xFCgelprodukte zur Verpackungsanlage"
+  - "Verpackungsanlage: Fertige Gefl\xFCgelprodukte werden in Frischhaltefolie vakuumverpackt"
+  - "Abfallentsorgungsanlage: Umschlagung, Zwischenlagerung, Sortierung und chemische
+    Behandlung von Abf\xE4llen und sonstigen Stoffen und dauerhafte Deponierung nicht
+    behandelbarer Reststoffe"
+  - Hochleistungsportioniersystem
+  - "Kommerzieller Fleischwolf: Zerkleinert tierische \xDCberreste und Kleintiere
+    und leitet diese zur Abfallentsorgungsanlage"
+  - "Hydraulische Wurstpressmaschine: F\xFCllt die Fleischmasse \xFCber die daf\xFCr
+    vorgesehene Darmhaltevorrichtung in den Naturdarm"
+  m_MachineKinds: 010000000200000001000000000000000000000001000000000000000100000000000000
+  m_MachineSounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 74b314b0a60eba34aac9304d67dd3528, type: 3}
+  - {fileID: 8300000, guid: 5d87d06e2a1e38e4ebf21cf814221f83, type: 3}
+  - {fileID: 8300000, guid: 4d100493e153af54d9ac72f708411534, type: 3}
+  - {fileID: 8300000, guid: 8430edf7677114e4a9297903a40f9bd0, type: 3}
+  - {fileID: 8300000, guid: 5d87d06e2a1e38e4ebf21cf814221f83, type: 3}
+  - {fileID: 8300000, guid: 6967b0cc5c6cf2243a110b55cbe5b509, type: 3}
+  m_MaxAdmonitions: 3
+  m_NumberOfBirds: 3
+  m_TimeLeft: 240

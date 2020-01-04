@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class MachineTriggerBehaviour : MonoBehaviour
 {
-
-
     [SerializeField] private Color m_SelectedColor;
     [SerializeField] private Color m_DeactivatedColor;
     [SerializeField] private TextMeshProUGUI m_NameText;
@@ -31,10 +29,14 @@ public class MachineTriggerBehaviour : MonoBehaviour
         m_NormalColor = GetComponent<MeshRenderer>().material.color;
     }
 
-    public void Initialize(string machineName, MachineKind machineKind)
+    public void Initialize(string machineName, MachineKind machineKind, AudioClip machineSound)
     {
         m_MachineName = machineName;
         m_MachineKind = machineKind;
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.clip = machineSound;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 
     // Update is called once per frame
@@ -69,6 +71,7 @@ public class MachineTriggerBehaviour : MonoBehaviour
         {
             m_NameText.text = "DEACTIVATED";
             GetComponent<MeshRenderer>().material.color = m_DeactivatedColor;
+            GetComponent<AudioSource>().Stop();
             m_IsDeactivated = true;
             return true;
         }
