@@ -147,10 +147,15 @@ public class GameManager : MonoBehaviour
         //m_NumberOfActiveMachines--;
     }
 
-    public void BirdCatched()
+    public void BirdCatched(GameObject bird)
     {
         GlobalVariables.SAVED_BIRDS++;
-        m_UIManager.SetBirds(GlobalVariables.SAVED_BIRDS);
+        Image birdImage = bird.GetComponentInChildren<Image>();
+        if(birdImage != null)
+        {
+            m_UIManager.AddBird(birdImage.sprite);
+        }
+        
         if (GlobalVariables.SAVED_BIRDS >= m_NumberOfBirds)
         {
             EndGame(GlobalVariables.GameState.WON);

@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MachineSounds:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 22e588da41246e740a828e9e613162ec, type: 3}
   - {fileID: 8300000, guid: 74b314b0a60eba34aac9304d67dd3528, type: 3}
   - {fileID: 8300000, guid: 5d87d06e2a1e38e4ebf21cf814221f83, type: 3}
   - {fileID: 8300000, guid: 4d100493e153af54d9ac72f708411534, type: 3}
