@@ -55,26 +55,20 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < m_NumberOfBirds; i++)
         {
-            int randomSpawnNo = -1;
-            int randomSpriteNo = -1;
+            
 
-            if (m_BirdSpawnPoints.Count > 0)
-            {
-                randomSpawnNo = UnityEngine.Random.Range(0, m_BirdSpawnPoints.Count);
-            }
+            int randomSpriteNo = -1;
 
             if (m_BirdSprites.Count > 0)
             {
                 randomSpriteNo = UnityEngine.Random.Range(0, m_BirdSprites.Count);
             }
-
-            GameObject spawnPoint = null;
-
-            if(randomSpawnNo != -1)
+            else
             {
-                spawnPoint = m_BirdSpawnPoints[randomSpawnNo];
-                m_BirdSpawnPoints.RemoveAt(randomSpawnNo);
+                Debug.Log("Error!");
             }
+
+            
 
             Sprite sprite = null;
 
@@ -84,11 +78,36 @@ public class GameManager : MonoBehaviour
                 m_BirdSprites.RemoveAt(randomSpriteNo);
             }
 
-            if(spawnPoint != null)
-            {
-                Instantiate(m_BirdPrefab, spawnPoint.transform.position, Quaternion.identity);
+            int randomSpawnNo = -1;
 
-                m_BirdPrefab.GetComponentInChildren<BirdBehaviour>().Initialize(sprite, m_Player.transform);
+
+            if (m_BirdSpawnPoints.Count > 0)
+            {
+                randomSpawnNo = UnityEngine.Random.Range(0, m_BirdSpawnPoints.Count);
+            }
+
+            else
+            {
+                Debug.Log("Error!");
+            }
+
+            GameObject spawnPoint = null;
+
+            if (randomSpawnNo != -1)
+            {
+                spawnPoint = m_BirdSpawnPoints[randomSpawnNo];
+                m_BirdSpawnPoints.RemoveAt(randomSpawnNo);
+            }
+            else
+            {
+                Debug.Log("Error!");
+            }
+
+            if (spawnPoint != null)
+            {
+                GameObject bird = Instantiate(m_BirdPrefab, spawnPoint.transform.position, Quaternion.identity);
+
+                bird.GetComponentInChildren<BirdBehaviour>().Initialize(sprite, m_Player.transform);
                 
             }
 

@@ -479,45 +479,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartMenuCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 3731996167478104311, guid: 2ca2f4124aad02344a2f70db59c9a20f,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3731996167478104311, guid: 2ca2f4124aad02344a2f70db59c9a20f,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3731996167478104311, guid: 2ca2f4124aad02344a2f70db59c9a20f,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3731996167478104311, guid: 2ca2f4124aad02344a2f70db59c9a20f,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3731996167812066736, guid: 2ca2f4124aad02344a2f70db59c9a20f,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3731996167812066736, guid: 2ca2f4124aad02344a2f70db59c9a20f,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3731996167812066736, guid: 2ca2f4124aad02344a2f70db59c9a20f,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3731996167812066736, guid: 2ca2f4124aad02344a2f70db59c9a20f,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ca2f4124aad02344a2f70db59c9a20f, type: 3}

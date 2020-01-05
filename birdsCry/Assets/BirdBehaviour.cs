@@ -26,7 +26,8 @@ public class BirdBehaviour : MonoBehaviour
 
     public void Initialize(Sprite sprite, Transform lookAtTarget)
     {
-        Debug.Log(lookAtTarget);
+        Debug.Log(sprite);
+
         if (sprite != null)
         {
             m_Image.sprite = sprite;

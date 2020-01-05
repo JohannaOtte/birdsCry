@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_WinText: Du hast gewonnen!
   m_LoseText: Du hast verloren!
   m_BackgroundImage: {fileID: 6053058026289412241}
-  m_WinSprite: {fileID: 21300000, guid: 642398a397352684bba05ad2370e1031, type: 3}
+  m_WinSprite: {fileID: 21300000, guid: b032e0e8cb76a7a4a8eeb2bd4195b17b, type: 3}
   m_LoseSprite: {fileID: 21300000, guid: a5693fd86cee3c146a34618345b5e619, type: 3}
   m_Camera: {fileID: 0}
   m_WinBackgroundColor: {r: 0.19450872, g: 0.8773585, b: 0.8646365, a: 0}

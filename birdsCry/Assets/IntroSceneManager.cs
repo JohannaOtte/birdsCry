@@ -8,6 +8,9 @@ public class IntroSceneManager : MonoBehaviour
 {
     [SerializeField] private Image m_Image;
     [SerializeField] private List<Sprite> m_Sprites;
+
+    [SerializeField] private Button m_FirstContinueButton;
+    [SerializeField] private Button m_SecondContinueButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +32,16 @@ public class IntroSceneManager : MonoBehaviour
         if(m_Sprites.Count > 0)
         {
             m_Image.sprite = m_Sprites[0];
+
+            if(m_Sprites.Count <= 3)
+            {
+                m_FirstContinueButton.gameObject.SetActive(false);
+                m_SecondContinueButton.gameObject.SetActive(true);
+            }
+
             m_Sprites.RemoveAt(0);
+
+
         }
 
         else
