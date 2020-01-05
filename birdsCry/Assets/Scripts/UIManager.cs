@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI m_AdmonitionsText;
-    [SerializeField] private TextMeshProUGUI m_BirdsText;
+    [SerializeField] private List<Image> m_BirdImages;
     [SerializeField] private TextMeshProUGUI m_TimerText;
+
+    private int m_CurrentBirdImage = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -27,9 +30,16 @@ public class UIManager : MonoBehaviour
         m_AdmonitionsText.text = "Ermahnungen: " + count;
     }
 
-    public void SetBirds(int count)
+    public void AddBird(Sprite bird)
     {
-        m_BirdsText.text = "Vögel: " + count;
+        if(m_CurrentBirdImage >= m_BirdImages.Count)
+        {
+            return;
+        }
+
+        m_BirdImages[m_CurrentBirdImage].color = Color.white;
+        m_BirdImages[m_CurrentBirdImage].sprite = bird;
+        m_CurrentBirdImage++;
     }
 
     public void SetTime(float m_TimeLeft)
@@ -49,6 +59,6 @@ public class UIManager : MonoBehaviour
             secondsLeftAsString = "0" + secondsLeftAsString;
         }
 
-        m_TimerText.text = "Übrige Zeit: " + minutesLeftAsString + ":" + secondsLeftAsString;
+        m_TimerText.text = minutesLeftAsString + ":" + secondsLeftAsString;
     }
 }
