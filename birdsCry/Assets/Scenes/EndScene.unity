@@ -484,5 +484,20 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 57494480}
+    - target: {fileID: 6053058026902610791, guid: 6ec9a68963af2524488a15c37a26f47b,
+        type: 3}
+      propertyPath: m_WinBackgroundColor.r
+      value: 0.82745105
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053058026902610791, guid: 6ec9a68963af2524488a15c37a26f47b,
+        type: 3}
+      propertyPath: m_WinBackgroundColor.g
+      value: 0.7137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053058026902610791, guid: 6ec9a68963af2524488a15c37a26f47b,
+        type: 3}
+      propertyPath: m_WinBackgroundColor.b
+      value: 0.48235297
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ec9a68963af2524488a15c37a26f47b, type: 3}

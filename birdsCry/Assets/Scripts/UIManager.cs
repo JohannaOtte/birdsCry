@@ -11,23 +11,30 @@ public class UIManager : MonoBehaviour
     [SerializeField] private List<Image> m_BirdImages;
     [SerializeField] private TextMeshProUGUI m_TimerText;
 
+    [SerializeField] private Color m_FirstWarningColor;
+    [SerializeField] private Color m_SecondWarningColor;
+    [SerializeField] private Color m_ThirdWarningColor;
+
     private int m_CurrentBirdImage = 0;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void SetAdmonitions(int count)
     {
         m_AdmonitionsText.text = "Ermahnungen: " + count;
+        //CHANGE COLOR
+        // switch (count)
+        //{
+        //    case 1:
+        //        m_AdmonitionsText.faceColor = m_FirstWarningColor;
+        //        break;
+        //    case 2:
+        //        m_AdmonitionsText.faceColor = m_SecondWarningColor;
+        //        break;
+        //    case 3:
+        //        m_AdmonitionsText.faceColor = m_ThirdWarningColor;
+        //        break;
+        //    default:
+        //        break;
+        //}
     }
 
     public void AddBird(Sprite bird)
