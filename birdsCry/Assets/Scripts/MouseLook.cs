@@ -64,8 +64,7 @@ public class MouseLook : MonoBehaviour
             {
                 selection = hit.collider.transform.gameObject;
             }
-
-            Debug.Log(selection);
+            
 
             if (selection == m_CurrentSelection)
             {
@@ -117,7 +116,7 @@ public class MouseLook : MonoBehaviour
 
             if (isCatched)
             {
-                m_GameManager.BirdCatched();
+                m_GameManager.BirdCatched(m_CurrentSelection);
                 m_LastBirdFollowObject = m_CurrentSelection;
             }
             
