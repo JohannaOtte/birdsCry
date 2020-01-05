@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public static class GlobalVariables
+﻿public static class GlobalVariables
 {
     public enum GameState
     {
@@ -17,4 +13,10 @@ public static class GlobalVariables
     public static int ADMONITIONS = 0;
     public static int SAVED_BIRDS = 0;
 
+    public static void ResetVariables()
+    {
+        ADMONITIONS = 0;
+        SAVED_BIRDS = 0;
+        GAMESTATE = GameState.INGAME;
+    }
 }

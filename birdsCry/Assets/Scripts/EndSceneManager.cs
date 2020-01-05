@@ -49,14 +49,9 @@ public class EndSceneManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Replay()
     {
+        GlobalVariables.ResetVariables();
         SceneManager.LoadScene("MainScene");
     }
 }
